@@ -1,0 +1,186 @@
+// "act busy name"			This is the name that a mapmaker must specify in the hint node.
+// { 
+//		"busy_anim" 		"Activity Name".
+//		"entry_anim"		"Activity Name"
+//		"exit_anim"			"Activity Name"
+//		"busy_sequence"		"Sequence Name". If specified, this is used over the activity name. Specify it in the hint node.
+//		"entry_sequence" 	"Sequence Name". If specified, this is used over the entry anim.
+//		"exit_sequence" 	"Sequence Name". If specified, this is used over the exit anim.
+//		"busy_sound"		"Sound Name". If specified, the NPC will play this sound when it plays the busy anim/seq. Can be a GameSound name or a response rules concept.
+//		"entry_sound"		"Sound Name". If specified, the NPC will play this sound when it plays the entry anim/seq. Can be a GameSound name or a response rules concept.
+//		"exit_sound"		"Sound Name". If specified, the NPC will play this sound when it plays the exit anim/seq. Can be a GameSound name or a response rules concept.
+//		"min_time"			"Minimum time to spend in this busy anim"
+//		"max_time"			"Maximum time to spend in this busy anim"	0 = only stop when interrupted by external event
+//		"interrupts"		One of:
+//							"BA_INT_NONE"		break out only when time runs out. No external influence will break me out.
+//							"BA_INT_DANGER"		break out of this anim only if threatened
+//							"BA_INT_PLAYER"		break out of this anim if I can see the player, or I'm threatened
+//							"BA_INT_AMBUSH"		break out if I see an enemy in my forward view cone.
+//							"BA_INT_COMBAT"		break out of this anim if combat occurs in my line of sight (bullet hits, grenades, etc), -OR- the max time is reached
+// }
+//
+// 
+"ActBusy.txt"
+{
+	// ASW
+	"Drone_Eat_Corpse"
+	{
+		"busy_sequence"		"feast_loop"
+		"exit_sequence" 	"feast_alert"
+		"min_time"		"0"
+		"max_time"		"0"
+		"interrupts"		"BA_INT_AMBUSH"
+	}
+
+//*****************************************************************************
+//************  Soldier actbusy section   *************************************
+//*****************************************************************************
+
+	
+
+	"Cover_crouch"
+	{
+		"busy_sequence"		"crouchidle_AB"
+		"exit_sequence"		"crouch_to_combat_stand"
+		"min_time"		"0.0"
+		"max_time"		"0.0"
+		"interrupts"	"BA_INT_AMBUSH"
+	}
+	
+	"Cover_crouch_B"
+	{
+		"busy_sequence"		"crouchidle_AB"
+		"exit_sequence"		"crouchidle_ABexit"
+		"min_time"		"0.0"
+		"max_time"		"0.0"
+		"interrupts"	"BA_INT_AMBUSH"
+	}
+
+	"Signal_group"
+	{
+		"busy_sequence"		"signal_group"
+		"min_time"		"0.0"
+		"max_time"		"0.0"
+		"interrupts"	"BA_INT_AMBUSH"
+	}
+
+	"Idle_Alert"
+	{
+		"busy_sequence"		"CombatIdle1"
+		"min_time"		"0.0"
+		"max_time"		"0.0"
+		"interrupts"	"BA_INT_AMBUSH"
+	}	
+
+	"Signal_Advance"
+	{
+		"busy_sequence"		"CombatIdle1"
+		"exit_sequence"		"signal_advance"
+		"min_time"		"0.0"
+		"max_time"		"0.0"
+		"interrupts"	"BA_INT_AMBUSH"
+	}
+
+	"LeanWall_Right"
+	{
+		"busy_sequence"		"leanwall_right_idle"
+		"exit_sequence"		"leanwall_right_exit"
+		"min_time"		"0.0"
+		"max_time"		"0.0"
+		"interrupts"	"BA_INT_AMBUSH"
+	}
+
+	"LeanWall_Corner_Right"
+	{
+		"busy_sequence"		"leanwall_Corner_right_idle"
+		"exit_sequence"		"leanwall_Corner_right_exit"
+		"min_time"		"0.0"
+		"max_time"		"0.0"
+		"interrupts"	"BA_INT_AMBUSH"
+	}
+
+	"LeanWall_Left"
+	{
+		"busy_sequence"		"leanwall_left_idle"
+		"exit_sequence"		"leanwall_left_exit"
+		"min_time"		"0.0"
+		"max_time"		"0.0"
+		"interrupts"	"BA_INT_AMBUSH"
+	}
+
+	"LeanWall_Left_B"
+	{
+		"busy_sequence"		"leanwall_left_b_idle"
+		"exit_sequence"		"leanwall_left_b_exit"
+		"min_time"		"0.0"
+		"max_time"		"0.0"
+		"interrupts"	"BA_INT_AMBUSH"
+	}
+
+	"LeanWall_CrouchLeft_A"
+	{
+		"busy_sequence"		"leanwall_CrouchLeft_A_idle"
+		"exit_sequence"		"leanwall_CrouchLeft_A_exit"
+		"min_time"		"0.0"
+		"max_time"		"0.0"
+		"interrupts"	"BA_INT_AMBUSH"
+	}
+
+	"LeanWall_CrouchLeft_B"
+	{
+		"busy_sequence"		"leanwall_CrouchLeft_B_idle"
+		"exit_sequence"		"leanwall_CrouchLeft_B_exit"
+		"min_time"		"0.0"
+		"max_time"		"0.0"
+		"interrupts"	"BA_INT_AMBUSH"
+	}
+
+	"LeanWall_CrouchLeft_C"
+	{
+		"busy_sequence"		"leanwall_CrouchLeft_C_idle"
+		"exit_sequence"		"leanwall_CrouchLeft_C_exit"
+		"min_time"		"0.0"
+		"max_time"		"0.0"
+		"interrupts"	"BA_INT_AMBUSH"
+	}
+
+	"LeanWall_CrouchLeft_D"
+	{
+		"busy_sequence"		"leanwall_CrouchLeft_D_idle"
+		"exit_sequence"		"leanwall_CrouchLeft_D_exit"
+		"min_time"		"0.0"
+		"max_time"		"0.0"
+		"interrupts"	"BA_INT_AMBUSH"
+	}
+
+//*****************************************************************************
+//************  Metrocop actbusy section   ************************************
+//*****************************************************************************
+
+	"Crouch_idle_pistol_A"
+	{
+		"busy_sequence"		"Crouch_idle_pistol"
+		"exit_sequence"		"Crouch_to_shootpistol"
+		"min_time"		"1.0"
+		"max_time"		"0.0"
+		"interrupts"	"BA_INT_COMBAT"
+	}
+
+	"Crouch_idle_smg1_A"
+	{
+		"busy_sequence"		"Crouch_idle_smg1"
+		"exit_sequence"		"Crouch_to_shootsmg1"
+		"min_time"		"1.0"
+		"max_time"		"0.0"
+		"interrupts"	"BA_INT_COMBAT"
+	}
+
+	"Idle_harrassidle_A"
+	{
+		"busy_sequence"		"harrassidle"
+		"min_time"		"1.0"
+		"max_time"		"0.0"
+		"interrupts"	"BA_INT_COMBAT"
+	}
+}
+
